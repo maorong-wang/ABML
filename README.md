@@ -1,4 +1,4 @@
-# ABML: Auxiliary Branch assisted Mutual Learning
+# Bridging the Capacity Gap for Online Knowledge Distillation
 This repo is the official Implementation of our paper "Bridging the Capacity Gap for Online Knowledge Distillation". This paper is accepted by IEEE MIPR 2023.
 
 ## Environment
