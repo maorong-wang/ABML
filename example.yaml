@@ -1,0 +1,14 @@
+MODEL:
+  MODEL1: "resnet20"
+  MODEL2: "multi_resnet110"
+OPTIMIZER:
+  BATCH_SIZE: 128
+  EPOCHS: 300
+  LR: 0.05
+  LR_DECAY_STAGES: [180, 210, 240, 270]
+  LR_DECAY_RATE: 0.3
+  WEIGHT_DECAY: 0.0005
+  MOMENTUM: 0.9
+  TYPE: "SGD"
+SAVE_DIR: "runs/cifar10/res110_res20/"
+DATASET: "cifar10"
