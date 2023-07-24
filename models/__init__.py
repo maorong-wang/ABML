@@ -1,0 +1,162 @@
+import os
+from .resnet import (
+    resnet8,
+    resnet14,
+    resnet20,
+    resnet32,
+    resnet44,
+    resnet56,
+    resnet110,
+    resnet8x4,
+    resnet32x4,
+)
+from .resnetv2 import (
+    ResNet18,
+    ResNet34,
+    ResNet50,
+    ResNet101,
+    ResNet152,
+)
+from .multi_resnet_v2 import (
+    multi_ResNet18_kd,
+    multi_ResNet34,
+   multi_ResNet50_kd,
+)
+from .multi_resnet import (
+    multi_resnet8,
+    multi_resnet14,
+    multi_resnet20,
+    multi_resnet32,
+    multi_resnet44,
+    multi_resnet56,
+    multi_resnet110,
+    multi_resnet1202,
+    multi_resnet8x4,
+    multi_resnet32x4,
+)
+from .vgg import (
+    vgg11,
+    vgg11_bn,
+    vgg13,
+    vgg13_bn,
+    vgg16,
+    vgg16_bn,
+    vgg19,
+    vgg19_bn,
+)
+from .wrn import (
+    wrn_16_2,
+    wrn_40_2,
+    wrn_40_4,
+    wrn_40_8,
+    wrn_40_16,
+    wrn_52_2,
+    wrn_52_4,
+    wrn_52_8,
+    wrn_52_16,
+    wrn_64_2,
+    wrn_76_2,
+    wrn_16_4,
+    wrn_28_2,
+)
+from .multi_wrn import (
+    multi_wrn_16_2,
+    multi_wrn_40_2,
+    multi_wrn_40_4,
+    multi_wrn_40_8,
+    multi_wrn_40_16,
+    multi_wrn_52_2,
+    multi_wrn_52_4,
+    multi_wrn_52_8,
+    multi_wrn_52_16,
+    multi_wrn_64_2,
+    multi_wrn_76_2,
+    multi_wrn_16_4,
+    multi_wrn_28_2,
+)
+from torchvision.models import resnet50, vit_b_32
+
+cifar100_model_prefix = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), 
+    "./teacher_weights/cifar_teachers/"
+)
+
+cifar_model_dict = {
+    # teachers
+    "resnet56": (
+        resnet56,
+        cifar100_model_prefix + "resnet56_vanilla/ckpt_epoch_240.pth",
+    ),
+    "resnet110": (
+        resnet110,
+        cifar100_model_prefix + "resnet110_vanilla/ckpt_epoch_240.pth",
+    ),
+    "resnet32x4": (
+        resnet32x4,
+        cifar100_model_prefix + "resnet32x4_vanilla/ckpt_epoch_240.pth",
+    ),
+    "multi_resnet18": (
+        multi_ResNet18_kd, None,
+    ),
+    "multi_resnet34": (
+        multi_ResNet34, None,
+    ),
+    "multi_resnet50": (
+        multi_ResNet50_kd, None,
+    ),
+    "multi_resnet8": (multi_resnet8, None),
+    "multi_resnet14": (multi_resnet14, None),
+    "multi_resnet20": (multi_resnet20, None),
+    "multi_resnet32": (multi_resnet32, None),
+    "multi_resnet44": (multi_resnet44, None),
+    "multi_resnet110": (multi_resnet110, None),
+    "multi_resnet1202": (multi_resnet1202, None),
+    "multi_resnet56": (multi_resnet56, None),
+    "multi_resnet8x4": (multi_resnet8x4, None),
+    # students
+    "resnet8": (resnet8, None),
+    "resnet14": (resnet14, None),
+    "resnet20": (resnet20, None),
+    "resnet32": (resnet32, None),
+    "resnet44": (resnet44, None),
+    "resnet8x4": (resnet8x4, None),
+    "resnet18": (ResNet18, None),
+    "resnet34": (ResNet34, None),
+    "resnet50": (ResNet50, None),
+    "resnet101": (ResNet101, None),
+    "resnet152": (ResNet152, None),
+    "vgg11": (vgg11, None),
+    "vgg11_bn": (vgg11_bn, None),
+    "vgg13": (vgg13, None),
+    "vgg13_bn": (vgg13_bn, None),
+    "vgg16": (vgg16, None),
+    "vgg16_bn": (vgg16_bn, None),
+    "vgg19": (vgg19, None),
+    "vgg19_bn": (vgg19_bn, None),
+    "wrn_16_2": (wrn_16_2, None),
+    "wrn_40_2": (wrn_40_2, None),
+    "wrn_40_4": (wrn_40_4, None),
+    "wrn_40_8": (wrn_40_8, None),
+    "wrn_40_16": (wrn_40_16, None),
+    "wrn_52_2": (wrn_52_2, None),
+    "wrn_52_4": (wrn_52_4, None),
+    "wrn_52_8": (wrn_52_8, None),
+    "wrn_52_16": (wrn_52_16, None),
+    "wrn_64_2": (wrn_64_2, None),
+    "wrn_76_2": (wrn_76_2, None),
+    "wrn_28_2": (wrn_28_2, None),
+    "multi_wrn_16_2": (multi_wrn_16_2, None),
+    "multi_wrn_40_2": (multi_wrn_40_2, None),
+    "multi_wrn_40_4": (multi_wrn_40_4, None),
+    "multi_wrn_40_8": (multi_wrn_40_8, None),
+    "multi_wrn_40_16": (multi_wrn_40_16, None),
+    "multi_wrn_52_2": (multi_wrn_52_2, None),
+    "multi_wrn_52_4": (multi_wrn_52_4, None),
+    "multi_wrn_52_8": (multi_wrn_52_8, None),
+    "multi_wrn_52_8": (multi_wrn_52_16, None),
+    "multi_wrn_64_2": (multi_wrn_64_2, None),
+    "multi_wrn_76_2": (multi_wrn_76_2, None),
+    "multi_wrn_28_2": (multi_wrn_28_2, None),
+    "vit_b_32": (vit_b_32, None),
+    "imagenet_resnet50": (resnet50, None),
+}
