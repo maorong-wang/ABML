@@ -5,7 +5,7 @@ This repo is the official Implementation of our paper "Bridging the Capacity Gap
 
 - Python 3.6
 - PyTorch 1.9.0
-- torchvision 0.10.
+- torchvision 0.10.0
   
 Install the package:
 ```bash
