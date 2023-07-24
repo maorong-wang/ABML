@@ -74,13 +74,13 @@ def main(cfg):
     if cfg.OPTIMIZER.TYPE == "SGD":
         optimizer1 = torch.optim.SGD(
             model1.parameters(),
-            lr=cfg.OPTIMIZER.LR * 0.01,
+            lr=cfg.OPTIMIZER.LR,
             momentum=cfg.OPTIMIZER.MOMENTUM,
             weight_decay=cfg.OPTIMIZER.WEIGHT_DECAY,
         )
         optimizer2 = torch.optim.SGD(
             model2.parameters(),
-            lr=cfg.OPTIMIZER.LR * 0.01,
+            lr=cfg.OPTIMIZER.LR,
             momentum=cfg.OPTIMIZER.MOMENTUM,
             weight_decay=cfg.OPTIMIZER.WEIGHT_DECAY,
         )
