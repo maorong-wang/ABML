@@ -12,6 +12,10 @@ Install the package:
 pip3 install -r requirements.txt
 ```
 
+## Training
+- Define hyperparameters in a yaml configuration file, you can use `example.yaml` as a template.
+- Run the command:
+  `python train.py -cfg *path-to-config-file*`
 
 ## Acknowledgement
 Credit to [mdistiller](https://github.com/megvii-research/mdistiller) for the codebase.
