@@ -21,4 +21,14 @@ pip3 install -r requirements.txt
 Credit to [mdistiller](https://github.com/megvii-research/mdistiller) for the codebase.
 
 ## Cite
-Coming Soon.
+If you found our work useful, please cite us:
+```
+@inproceedings{wang2023bridging,
+  title={Bridging the Capacity Gap for Online Knowledge Distillation},
+  author={Wang, Maorong and Yu, Hao and Xiao, Ling and Yamasaki, Toshihiko},
+  booktitle={2023 IEEE 6th International Conference on Multimedia Information Processing and Retrieval (MIPR)},
+  pages={1--4},
+  year={2023},
+  organization={IEEE}
+}
+```
